@@ -1,9 +1,7 @@
 package controller;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -44,6 +42,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CalendarioController implements Initializable {
+	
+	@FXML
+	private Label lbTuto;
 
 	@FXML
 	private ImageView display;
@@ -463,7 +464,6 @@ public class CalendarioController implements Initializable {
 	}
 
 	public void ArtDesatack(int lin, int linFinal, int col) {
-		System.out.println("chegou");
 		for (int j = lin - 1; j < linFinal + 1; j++) {
 			Label limpar = new Label();
 			limpar.setPrefHeight(62);
@@ -476,7 +476,7 @@ public class CalendarioController implements Initializable {
 
 	}
 
-	public void lerCalendario(File text) {
+	/*public void lerCalendario(File text) {
 		try {
 			File file = new File("test.txt");
 			FileReader fileReader = new FileReader(file);
@@ -494,7 +494,7 @@ public class CalendarioController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+*/
 	public void handlerMenuItemAbout(ActionEvent e) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/JanelaAbout.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
